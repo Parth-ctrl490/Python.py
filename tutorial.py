@@ -288,3 +288,121 @@ except ValueError:
     print("Invalid input. Please enter a number.")
 finally:
     print("Execution completed.")
+
+
+#MAP FUNCTION
+# The map() function applies a given function to each item of an iterable (like lists, tuples,dictionaries,etc)
+def square(num):
+    return num ** 2
+    numbers = [1, 2, 3, 4, 5]
+    squares = map(square, numbers)
+    print(list(squares))
+#OUTPUT
+#[1, 4, 9, 16, 25]
+
+
+#using lambda function
+numbers = [1, 2, 3, 4, 5]
+squares = map(lambda num: num ** 2, numbers)  
+print(list(squares))
+#OUTPUT
+#[1, 4, 9, 16, 25]
+
+
+
+#kwargs which is short form of keyword arguments is used to pass variable number of keyword arguments
+def greet(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key} = {value}")
+        greet(name="Parth", age=20, city="Kanpur")
+        #OUTPUT
+        #name = Parth
+        #age = 20
+        #city = Kanpur
+
+
+        #FILTER FUNCTION
+        # The filter() function constructs an iterator from elements of an iterable for which a function returns true
+        #In other words it only returns value which is true for elements
+        def is_even(num):
+            return num % 2 == 0
+            numbers = [1, 2, 3, 4, 5]
+            even_numbers = filter(is_even, numbers)
+            print(list(even_numbers))
+            #OUTPUT
+            #[2, 4]
+            
+
+#Zip function in python is used to iterate over two lists in parallel
+#Zip function returns an iterator of tuples where the first item in each passed iterator is paired together,
+# the second item in each passed iterator is paired together and so on.
+#If the iterables are of uneven length, then the remaining values from the iterables are ignored
+#zip() function stops when the shortest input iterable is exhausted.
+#zip() function returns an iterator of tuples based on the iterable arguments provided.
+#zip() function can take any number of arguments, but it is most useful with two iterables
+#zip() function is used to map the elements of one list to another list
+
+def zip_function():
+    list1 = [1, 2, 3, 4, 5]
+    list2 = ['a', 'b', 'c', 'd', 'e']
+    zipped = zip(list1, list2)
+    for item in zipped:
+        print(item)
+        #OUTPUT
+        #(1, 'a')
+        #(2, 'b')
+        #(3, 'c')
+        #(4, 'd')
+        #(5, 'e')
+
+
+
+        #zip_longest() function is used to iterate over two lists in parallel, similar to the zip
+        # function, but it fills missing values with a fillvalue instead of stopping at the end of
+        # the shortest list
+        from itertools import zip_longest
+        def zip_longest_function():
+            list1 = [1, 2, 3, 4, 5]
+            list2 = ['a', 'b', 'c', 'd']
+            zipped = zip_longest(list1, list2, fillvalue='None')
+            for item in zipped:
+                print(item)
+                #OUTPUT
+                #(1, 'a')
+                #(2, 'b')
+                #(3, 'c')
+                #(4, 'd')
+                #(5, 'None')
+
+#enumerate() function adds a counter to an iterable and returns it in a form of enumerate object
+#enumerate() function is used to iterate over something and have an automatic counter
+#enumerate() function returns a tuple containing a count (from start which defaults to 0) and
+# the values obtained from iterating over the sequence
+def enumerate_function():
+    fruits = ['apple', 'banana', 'cherry', 'date', 'elderberry']
+    for index, fruit in enumerate(fruits, start=1):
+        print(f"{index}. {fruit}")
+        #OUTPUT
+        #1. apple
+        #2. banana
+        #3. cherry
+        #4. date
+        #5. elderberry
+
+
+
+#reduce() function applies a rolling computation to sequential pairs of values in a list
+#reduce() function is a part of the functools module in Python
+#reduce() function applies a rolling computation to sequential pairs of values in a list
+#The reduce() function takes a function and a list as an argument and applies the function to th
+#e first two items in the list, then to the result and the next item, and so on
+#The reduce() function is a part of the functools module in Python
+def reduce_function():
+    from functools import reduce
+    numbers = [1, 2, 3, 4, 5]
+    sum = reduce(lambda x, y: x + y, numbers) 
+    print(sum)
+    #OUTPUT
+    #15
+    
+

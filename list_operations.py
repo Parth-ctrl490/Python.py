@@ -242,5 +242,199 @@ print(list1)
 #output
 # [1, 2, 3, {4, 5, 6}]
 
+#Extending a list in python
+
+list1=[1,2,3]
+list2=[4,5,6]
+#Method 1: Using the extend() method
+list1.extend(list2)
+print(list1)
+#output
+# [1, 2, 3, 4, 5, 6]
+
+
+#Method 2: Using the '+' operator
+list1=list1+list2
+print(list1)
+#output
+# [1, 2, 3, 4, 5, 6]
+
+#Method 3:Using += Operator
+list1=[1,2,3]
+list2=[4,5,6]
+list1+=list2
+print(list1)
+
+#output
+# [1, 2, 3, 4, 5, 6]
+
+
+#Using Slicing
+list1=[1,2,3]
+list2=[4,5,6]
+list1[len(list1):]=list2
+print(list1)
+#output
+# [1, 2, 3, 4, 5, 6]
+
+from itertools import chain
+
+a=[1,2,3]
+n=[4,5,6]
+a.extend(chain(n))
+print(a)
+#output
+#[1, 2, 3, 4, 5, 6]
+
+
+#How to Remove Item from a List in Python
+a=[10,20,30,40,50]
+a.remove(30)
+print(a)
+#output
+# [10, 20, 40, 50]
+
+a=[10,20,30,40,50]
+a.remove(30)
+print(a)
+#output
+# [10, 20, 40, 50]
+
+a=[10,20,30,40,50]
+v=a.pop(1)
+print(a)
+print(v)
+#output
+# [10, 30, 40, 50]
+# 20 is removed
+
+a=[10,20,30,40,50]
+del a[2]
+print(a)
+#output
+# [10, 20, 40, 50]
+
+a=[10,20,30,40,50,60,70]
+del a[1:4]
+print(a)
+#output
+# [10, 20, 70]
+
+a=[10,20,30,40]
+a.clear()
+print(a)
+#output
+# []
+
+a = [1, 2, 3, 4, 5]
+a.clear()
+print("List after clearing:", a)
+#output
+# List after clearing: []
+
+
+a = [1, 2, 3, 4, 5]
+# Reassign 'a' to a new empty list
+a = []
+# Print the current state of 'a'
+print("List after reassignment:", a)
+#output
+# List after reassignment: []
+
+a = [1, 2, 3, 4, 5]
+del a[:]
+print("List after using del:", a)
+#output
+# List after using del: []
+
+
+
+# Basic Methods
+# append(item)
+
+# Adds an item to the end of the list.
+# extend(iterable)
+
+# Extends the list by appending elements from an iterable (e.g., another list).
+# insert(index, item)
+
+# Inserts an item at a specified index.
+# remove(item)
+
+# Removes the first occurrence of a specified item.
+# pop(index=-1)
+
+# Removes and returns the item at the specified index (default is the last item).
+# clear()
+
+# Removes all elements from the list.
+# index(item, start=0, end=len(list))
+
+# Returns the index of the first occurrence of a specified item.
+# count(item)
+
+# Returns the number of occurrences of a specified item.
+# sort(key=None, reverse=False)
+
+# Sorts the list in ascending order by default. You can customize using the key and reverse parameters.
+# reverse()
+
+# Reverses the order of the list in place.
+# copy()
+# Returns a shallow copy of the list.
+# Other Operations
+# Slicing:
+# Extract portions of a list using [start:stop:step].
+
+# Concatenation:
+# Combine lists using + or extend with slicing.
+
+# Repetition:
+# Repeat lists using *.
+
+# Utility Functions (Not List-Specific)
+# These are built-in functions that work with lists:
+
+# len(list)
+
+# Returns the number of items in the list.
+# max(list)
+
+# Returns the largest element in the list.
+# min(list)
+
+# Returns the smallest element in the list.
+# sum(list)
+
+# Returns the sum of elements in the list (numeric).
+# all(list)
+
+# Returns True if all elements in the list are truthy.
+# any(list)
+
+# Returns True if at least one element in the list is truthy.
+# enumerate(list, start=0)
+
+# Returns an enumerate object containing index-value pairs.
+# sorted(list, key=None, reverse=False)
+
+# Returns a new sorted list (does not modify the original list).
+# zip(*lists)
+
+# Combines multiple lists into tuples.
+# From itertools
+# chain(*iterables)
+
+# Combines multiple iterables into one.
+# combinations(iterable, r)
+
+# Returns all possible r-length combinations from the iterable.
+# permutations(iterable, r)
+
+# Returns all r-length permutations from the iterable.
+# islice(iterable, start, stop, step)
+
+# Slices an iterable like a list.
+
 
 
